@@ -22,7 +22,8 @@ class MazeMDPEnv(gym.Env):
         if kwargs == {}:
             width = 10
             height = 10
-            self.mdp, nb_states, coord_x, coord_y = create_random_maze(10, 10, 0.2)
+            self.maze = create_random_maze(10, 10, 0.2)
+            self.mdp, nb_states, coord_x, coord_y = self.maze.mdp, self.maze.nb_states+1, self.maze.coord_x, self.maze.coord_y
         else:
             kwargs = kwargs["kwargs"]
             width = kwargs["width"]
@@ -33,9 +34,8 @@ class MazeMDPEnv(gym.Env):
                 hit = kwargs["hit"]
             if "walls" not in kwargs.keys():
                 ratio = kwargs["ratio"]
-                self.mdp, nb_states, coord_x, coord_y = create_random_maze(
-                    width, height, ratio, hit
-                )
+                self.maze = create_random_maze(width, height, ratio, hit)
+                self.mdp, nb_states, coord_x, coord_y = self.maze.mdp, self.maze.nb_states+1, self.maze.coord_x, self.maze.coord_y
             else:
                 self.mdp, nb_states, coord_x, coord_y = build_maze(
                     width, height, kwargs["walls"], hit
@@ -111,3 +111,7 @@ class MazeMDPEnv(gym.Env):
 
     def set_timeout(self, timeout):
         self.mdp.timeout = timeout
+
+    def change_last_states(self, last_states):
+        self.maze.change_last_states(last_states)
+        self.mdp = self.maze.mdp
