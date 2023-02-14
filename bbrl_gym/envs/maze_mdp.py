@@ -37,9 +37,10 @@ class MazeMDPEnv(gym.Env):
                 self.maze = create_random_maze(width, height, ratio, hit)
                 self.mdp, nb_states, coord_x, coord_y = self.maze.mdp, self.maze.nb_states+1, self.maze.coord_x, self.maze.coord_y
             else:
-                self.mdp, nb_states, coord_x, coord_y = build_maze(
+                self.maze = build_maze(
                     width, height, kwargs["walls"], hit
                 )
+                self.mdp, nb_states, coord_x, coord_y = self.maze.mdp, self.maze.nb_states+1, self.maze.coord_x, self.maze.coord_y
 
         self.nb_states = nb_states
         self.coord_x = coord_x
