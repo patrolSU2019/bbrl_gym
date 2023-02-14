@@ -2,4 +2,4 @@ numpy>=1.19.1
 gym==0.21.0
 swig
 box2d-py
-git+https://github.com/patrolSU2019/SimpleMazeMDP@master#egg=SimpleMazeMDP
+mazemdp @ git+https://github.com/patrolSU2019/SimpleMazeMDP.git@master
