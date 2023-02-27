@@ -5,9 +5,9 @@ Simple Maze MDP
 import logging
 from typing import Callable
 
-import gym
-from gym import spaces
-from gym.utils import seeding
+import gymnasium as gym
+from gymnasium import spaces
+from gymnasium.utils import seeding
 
 from mazemdp import create_random_maze
 from mazemdp.maze import build_maze

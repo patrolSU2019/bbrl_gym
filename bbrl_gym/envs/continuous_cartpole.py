@@ -5,10 +5,10 @@ Continuous action version of the classic cart-pole system implemented by Rich Su
 import logging
 import math
 
-import gym
+import gymnasium as gym
 import numpy as np
-from gym import spaces
-from gym.utils import seeding
+from gymnasium import spaces
+from gymnasium.utils import seeding
 
 logger = logging.getLogger(__name__)
 

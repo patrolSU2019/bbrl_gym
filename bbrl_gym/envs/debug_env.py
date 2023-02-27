@@ -6,10 +6,10 @@ The agent starts at 0.01 and gets a reward of 1 for any movement, until it moves
 
 import logging
 
-import gym
+import gymnasium as gym
 import numpy as np
-from gym import spaces
-from gym.utils import seeding
+from gymnasium import spaces
+from gymnasium.utils import seeding
 
 logger = logging.getLogger(__name__)
 

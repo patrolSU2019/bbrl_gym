@@ -5,10 +5,10 @@ The agent gets a reward of 10 if it reaches 1 and a reward of 2 if it reaches 0.
 
 import logging
 
-import gym
+import gymnasium as gym
 import numpy as np
-from gym import spaces
-from gym.utils import seeding
+from gymnasium import spaces
+from gymnasium.utils import seeding
 
 logger = logging.getLogger(__name__)
 

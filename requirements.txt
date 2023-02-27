@@ -1,5 +1,6 @@
-numpy>=1.19.1
-gym==0.21.0
+numpy
+gymnasium
 swig
 box2d-py
-mazemdp @ git+https://github.com/patrolSU2019/SimpleMazeMDP.git@master
+mazemdp @ git+https://github.com/patrolSU2019/SimpleMazeMDP.git@gymnasium
+setuptools

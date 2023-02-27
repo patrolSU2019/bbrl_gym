@@ -4,9 +4,9 @@ Simple MDP with 5 states and 2 actions
 
 import logging
 
-import gym
-from gym import spaces
-from gym.utils import seeding
+import gymnasium as gym
+from gymnasium import spaces
+from gymnasium.utils import seeding
 
 logger = logging.getLogger(__name__)
 
